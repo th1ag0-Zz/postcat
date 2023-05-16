@@ -70,7 +70,7 @@ export const Start = () => {
 
             <Input
               control={control}
-              label='Perfil'
+              label='Email'
               name='email'
               type='email'
               placeholder='email@exemplo.com'
