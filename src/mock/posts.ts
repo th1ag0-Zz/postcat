@@ -1,0 +1,24 @@
+import PostExemple from '../assets/post-exemple.png';
+
+export const Posts = [
+  {
+    id: 0,
+    imgUrl: PostExemple,
+    content: `🌸 Selecionamos 5 dicas para deixar sua mãe mais bela nesse dia das mães! 💖
+      <br />
+      <br />
+      1. Presenteie com um kit de cuidados para a pele: uma rotina de beleza completa para sua mãe se sentir renovada. <br />
+      2. Um conjunto de maquiagens: escolha itens básicos que sua mãe usa no dia a dia e cores que ela adora. <br />
+      3. Invista em um tratamento capilar de qualidade: um produto que deixará os cabelos de sua mãe ainda mais bonitos e saudáveis. <br />
+      4. Kit de esmaltes: cores vibrantes e clássicas para sua mãe arrasar nas unhas. <br />
+      5. Vale-presente Rio Belleza: permita que sua mãe escolha os produtos que mais ama em nossas lojas.
+      <br />
+      <br />
+      📍 Não se esqueça, o Dia das Mães é neste domingo, 14 de maio! Visite uma de nossas 8 lojas e encontre o presente perfeito para a mulher mais importante da sua vida! 💕
+      <br />
+      Descrição da imagem em inglês: mother and daughter, beauty products, smiling, hugging, makeup, skincare, haircare, nail polish, gift box.
+      <br />
+      <br />
+      Você pode buscar no Unsplash usando essas palavras-chave para encontrar uma imagem relacionada ao tema do post.`,
+  },
+];
