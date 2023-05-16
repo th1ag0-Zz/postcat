@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { StorySliderSkeleton } from './Skeleton/StorySliderSkeleton';
 
 interface StorysSliderProps {
@@ -58,8 +58,6 @@ export const StorySlider: React.FC<StorysSliderProps> = ({ loading }) => {
     if (!startScroll) return;
     if (!containerRef.current) return;
 
-    console.log('onMouseMove');
-
     const distanceX = event.clientX - dragStart.pointerX;
     const newScrollValue = scrollValue + (dragStart.scrollX - distanceX);
 
@@ -89,9 +87,8 @@ export const StorySlider: React.FC<StorysSliderProps> = ({ loading }) => {
         onMouseLeave={onMouseLeave}
         onMouseMove={onMouseMove}
         className={`flex gap-4 px-4 w-[${containerWidth}px]`}
-        // style={{ transform: `translateX(${-translateValue}px)` }}
       >
-        {storys.map((story, index) => (
+        {storys.map((story) => (
           <button
             key={story.id}
             className='flex items-center justify-center min-w-[128px] max-w-[128px] h-[228px] rounded-xl'
