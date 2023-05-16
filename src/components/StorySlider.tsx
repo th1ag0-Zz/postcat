@@ -86,7 +86,8 @@ export const StorySlider: React.FC<StorysSliderProps> = ({ loading }) => {
         onMouseUp={onMouseUp}
         onMouseLeave={onMouseLeave}
         onMouseMove={onMouseMove}
-        className={`flex gap-4 px-4 w-[${containerWidth}px]`}
+        className={`flex gap-4 px-4`}
+        style={{ width: containerWidth }}
       >
         {storys.map((story) => (
           <button
