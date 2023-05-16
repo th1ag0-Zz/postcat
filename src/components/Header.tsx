@@ -1,21 +1,12 @@
-import { useState } from 'react';
 import { Menu } from '@headlessui/react';
 
 import LogoImg from '../assets/logo.png';
 import { MenuIcon } from './Icons/MenuIcon';
 
 export const Header = () => {
-  const [showMenu, setShowMenu] = useState(false);
-
-  const handleShowMenu = () => setShowMenu(!showMenu);
-
   return (
     <header className='w-full h-[72px] flex items-center px-4 justify-between border-b border-gray-200'>
       <img src={LogoImg} alt='logo' />
-
-      {/* <button type='button' className='p-2'>
-          <MenuIcon />
-        </button> */}
 
       <div className='relative'>
         <Menu>
