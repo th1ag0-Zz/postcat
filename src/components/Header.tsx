@@ -1,5 +1,5 @@
 import LogoImg from '../assets/logo.png';
-import MenuIcon from '../assets/menu-icon.svg';
+import { MenuIcon } from './Icons/MenuIcon';
 
 export const Header = () => {
   return (
@@ -7,7 +7,7 @@ export const Header = () => {
       <img src={LogoImg} alt='logo' />
 
       <button className='p-2'>
-        <img src={MenuIcon} alt='menu' />
+        <MenuIcon />
       </button>
     </header>
   );

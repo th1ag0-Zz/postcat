@@ -54,7 +54,7 @@ export const ConfirmCode = () => {
               control={control}
               label='Código'
               name='code'
-              placeholder='@exemplo'
+              placeholder=''
               error={errors.code?.message}
             />
 

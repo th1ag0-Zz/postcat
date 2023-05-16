@@ -1,10 +1,10 @@
-import CheckIcon from '../assets/check-circle.png';
-import CloseIcon from '../assets/x-close.svg';
+import { CheckIcon } from './Icons/CheckIcon';
+import { CloseIcon } from './Icons/CloseIcon';
 
 export const PromotionCard = () => {
   return (
     <div className='p-4 rounded-lg bg-success-25  border border-success-300 text-success-700 flex items-start justify-between gap-3'>
-      <img src={CheckIcon} />
+      <CheckIcon />
 
       <div className='flex flex-1 flex-col items-start text-sm'>
         <p className='mb-1 font-medium'>
@@ -19,7 +19,7 @@ export const PromotionCard = () => {
       </div>
 
       <button>
-        <img src={CloseIcon} />
+        <CloseIcon />
       </button>
     </div>
   );
