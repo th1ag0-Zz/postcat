@@ -12,9 +12,9 @@ export const MenuIcon: React.FC = () => {
       <path
         d='M3 12H21M3 6H21M3 18H21'
         stroke='#344054'
-        stroke-width='2'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeWidth='2'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />
     </svg>
   );
