@@ -5,13 +5,27 @@ import { PromotionCard } from '../components/PromotionCard';
 import { UserProfileCard } from '../components/UserProfileCard';
 import { StorySlider } from '../components/StorySlider';
 import { PostCards } from '../components/PostCards';
+import { api } from '../services/api';
 
 export const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [user, setUser] = useState({});
+  const [posts, setPosts] = useState([]);
+
+  const getData = async () => {
+    const response = await api.get('/');
+
+    setUser(response.data.user);
+    setPosts(response.data.posts);
+
+    setIsLoading(false);
+  };
 
   useEffect(() => {
+    setIsLoading(true);
+
     const timer = setTimeout(() => {
-      setIsLoading(false);
+      getData();
     }, 3000);
 
     return () => clearTimeout(timer);
@@ -24,7 +38,7 @@ export const Home = () => {
           <PromotionCard />
 
           <div className='border-b border-gray-200 h-[92px]'>
-            <UserProfileCard loading={isLoading} />
+            <UserProfileCard loading={isLoading} user={user} />
           </div>
         </div>
 
@@ -47,7 +61,7 @@ export const Home = () => {
             </p>
           </div>
 
-          <PostCards loading={isLoading} />
+          <PostCards loading={isLoading} user={user} posts={posts} />
         </div>
       </div>
     </Layout>

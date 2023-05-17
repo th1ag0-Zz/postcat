@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const CloseIcon: React.FC = () => {
+export const CloseIcon = () => {
   return (
     <svg
       width='21'

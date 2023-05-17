@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const MenuIcon: React.FC = () => {
+export const MenuIcon = () => {
   return (
     <svg
       width='24'

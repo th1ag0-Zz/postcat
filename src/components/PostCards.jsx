@@ -1,18 +1,12 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
 
-import ProfileImg from '../assets/profile-exemple.png';
 import ClipboardImg from '../assets/clipboard.svg';
 import DownloadImg from '../assets/download.svg';
 
-import { Posts } from '../mock/posts';
 import { PostCardSkeleton } from './Skeleton/PostCardSkeleton';
 
-interface PostCardProps {
-  loading?: boolean;
-}
-
-export const PostCards: React.FC<PostCardProps> = ({ loading }) => {
+export const PostCards = ({ loading, user, posts }) => {
   const [viewFullContent, setViewFullContent] = useState(false);
 
   const handleViewContent = () => setViewFullContent(true);
@@ -29,16 +23,16 @@ export const PostCards: React.FC<PostCardProps> = ({ loading }) => {
 
   return (
     <>
-      {Posts.map((card) => (
+      {posts.map((card) => (
         <div key={card.id} className='w-full flex flex-col items-start text-sm'>
           <div className='flex w-full justify-between mb-3'>
             <div className='flex items-center gap-2'>
               <img
-                src={ProfileImg}
+                src={'/profile-exemple.png'}
                 alt='profile'
                 className='w-10 h-10 rounded-full'
               />
-              <p>@riobelleza</p>
+              <p>{user.profile}</p>
             </div>
 
             <button

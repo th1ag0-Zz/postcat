@@ -1,14 +1,6 @@
 import React from 'react';
 
-import ProfileImg from '../assets/profile-exemple.png';
-
-interface UserProfileCardProps {
-  loading?: boolean;
-}
-
-export const UserProfileCard: React.FC<UserProfileCardProps> = ({
-  loading,
-}) => {
+export const UserProfileCard = ({ loading, user }) => {
   if (loading) {
     return (
       <div className='flex items-start gap-4'>
@@ -30,14 +22,16 @@ export const UserProfileCard: React.FC<UserProfileCardProps> = ({
   return (
     <div className='flex items-start gap-4 text-sm'>
       <img
-        src={ProfileImg}
+        src='/profile-exemple.png'
         className='w-[60px] h-[60px] rounded-full overflow-hidden'
       />
 
       <div>
-        <p className='font-bold'>Rio belleza</p>
-        <p>@riobelleza</p>
-        <p>3.165 publicações 46 mil seguidores </p>
+        <p className='font-bold'>{user.profile_name}</p>
+        <p>{user.profile}</p>
+        <p>
+          {user.posts_count} publicações {user.followers_count} seguidores
+        </p>
       </div>
     </div>
   );

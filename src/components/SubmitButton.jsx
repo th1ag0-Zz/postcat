@@ -1,10 +1,6 @@
 import React from 'react';
 
-interface SubmitButtonProps {
-  text: string;
-}
-
-export const SubmitButton: React.FC<SubmitButtonProps> = ({ text }) => {
+export const SubmitButton = ({ text }) => {
   return (
     <button
       type='submit'

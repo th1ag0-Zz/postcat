@@ -1,10 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { StorySliderSkeleton } from './Skeleton/StorySliderSkeleton';
 
-interface StorysSliderProps {
-  loading?: boolean;
-}
-
 const bgColors = [
   'linear-gradient(180deg, #9148D1 0%, #6584EA 100%)',
   'linear-gradient(180deg, #BC34AF 0%, #DC5489 100%)',
@@ -18,8 +14,8 @@ const storys = [
   { id: 3, text: 'teste', bgColor: bgColors[0] },
 ];
 
-export const StorySlider: React.FC<StorysSliderProps> = ({ loading }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
+export const StorySlider = ({ loading }) => {
+  const containerRef = useRef(null);
 
   const [startScroll, setStartScroll] = useState(false);
   const [lastScrollValue, setLastScrollValue] = useState(0);
@@ -31,11 +27,11 @@ export const StorySlider: React.FC<StorysSliderProps> = ({ loading }) => {
 
   const containerWidth = storys.length * 128 + (storys.length + 1) * 16;
 
-  const onMouseDown = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  const onMouseDown = (event) => {
     setStartScroll(true);
 
     setDragStart({
-      scrollX: (event.currentTarget as HTMLElement).scrollLeft,
+      scrollX: event.currentTarget.scrollLeft,
       pointerX: event.clientX,
     });
   };
@@ -54,7 +50,7 @@ export const StorySlider: React.FC<StorysSliderProps> = ({ loading }) => {
     setStartScroll(false);
   };
 
-  const onMouseMove = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  const onMouseMove = (event) => {
     if (!startScroll) return;
     if (!containerRef.current) return;
 
@@ -64,7 +60,6 @@ export const StorySlider: React.FC<StorysSliderProps> = ({ loading }) => {
     containerRef.current.scrollLeft = newScrollValue;
 
     setLastScrollValue(newScrollValue);
-    console.log(newScrollValue);
   };
 
   if (loading) {

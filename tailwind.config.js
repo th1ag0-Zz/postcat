@@ -2,7 +2,7 @@
 import tailwindcssAnimate from 'tailwindcss-animate';
 
 export default {
-  content: ['./index.html', './src/**/*.{ts,tsx}'],
+  content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     fontFamily: {
       inter: ['Inter', 'DM Sans', 'DM Mono', 'sans-serif'],

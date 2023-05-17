@@ -11,17 +11,13 @@ const codeVerifySchema = yup.object({
   code: yup.string().required('Preencha esse campo, por favor.'),
 });
 
-interface CodeVerifyFormProps {
-  code: string;
-}
-
 export const ConfirmCode = () => {
   const navigate = useNavigate();
   const {
     handleSubmit,
     control,
     formState: { errors },
-  } = useForm<CodeVerifyFormProps>({
+  } = useForm({
     mode: 'onSubmit',
     resolver: yupResolver(codeVerifySchema),
     defaultValues: {
@@ -29,7 +25,7 @@ export const ConfirmCode = () => {
     },
   });
 
-  const onSubmit = (data: CodeVerifyFormProps) => {
+  const onSubmit = (data) => {
     console.log(data);
     navigate('/home');
   };

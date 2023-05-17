@@ -1,20 +1,7 @@
-import React, { InputHTMLAttributes } from 'react';
+import React from 'react';
 import { Controller } from 'react-hook-form';
 
-interface InputProps extends InputHTMLAttributes<HTMLElement> {
-  label: string;
-  name: string;
-  control: any;
-  error?: string;
-}
-
-export const Input: React.FC<InputProps> = ({
-  label,
-  name,
-  error,
-  control,
-  ...rest
-}) => {
+export const Input = ({ label, name, error, control, ...rest }) => {
   return (
     <div className='w-full flex flex-col gap-1.5'>
       <label htmlFor={name} className='text-gray-700 font-medium'>

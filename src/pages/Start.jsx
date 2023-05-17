@@ -17,18 +17,13 @@ const startFormSchema = yup.object({
     .required('Preencha esse campo, por favor.'),
 });
 
-interface StartFormProps {
-  user: string;
-  email: string;
-}
-
 export const Start = () => {
   const navigate = useNavigate();
   const {
     handleSubmit,
     control,
     formState: { errors },
-  } = useForm<StartFormProps>({
+  } = useForm({
     mode: 'onSubmit',
     resolver: yupResolver(startFormSchema),
     defaultValues: {
@@ -37,7 +32,7 @@ export const Start = () => {
     },
   });
 
-  const onSubmit = (data: StartFormProps) => {
+  const onSubmit = (data) => {
     console.log(data);
     navigate('/confirm-code');
   };
